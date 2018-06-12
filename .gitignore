@@ -1,0 +1,4 @@
+vendor/
+efmd
+!efmd/
+.idea/

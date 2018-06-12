@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package efm;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+
+service Greeter {
+
+    rpc Ping(TestRequest) returns (TestReply) {
+        option (google.api.http) = {
+           get: "/v1/ping"
+        };
+    }
+}
+
+message TestRequest {
+    string name = 1;
+}
+
+message TestReply {
+    string msg = 2;
+}
